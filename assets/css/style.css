@@ -1,0 +1,215 @@
+/* Premium Liquid Glass Upgrade */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 20px 60px rgba(0, 65, 44, 0.12);
+    --bg-color: #edf7f3;
+    --text-color: #172b26;
+    --accent-color: #006a4e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.glass-card,
+.navbar {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    transition: background 0.4s, box-shadow 0.4s, transform 0.3s;
+}
+
+.glass-card:hover {
+    box-shadow: 0 25px 70px rgba(0, 85, 60, 0.16);
+}
+
+body.dark {
+    --glass-bg: rgba(15, 30, 35, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --bg-color: #071b19;
+    --text-color: #e8fff5;
+    --accent-color: #00d99a;
+}
+
+body.dark .bg {
+    background:
+        radial-gradient(circle at 20% 15%, #075a48, transparent 35%),
+        radial-gradient(circle at 80% 75%, #102c50, transparent 40%),
+        #071b19;
+}
+
+body.dark .glass-card h2,
+body.dark .glass-card h3,
+body.dark .brand h2 {
+    color: #e8fff5;
+}
+
+body.dark .form-group label {
+    color: #d8f5e8;
+}
+
+body.dark .form-group input,
+body.dark .form-group select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8fff5;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .form-group select option {
+    background: #102c27;
+    color: white;
+}
+
+body.dark .student-item {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .student-item strong {
+    color: #e8fff5;
+}
+
+body.dark .nav-links a:not(.nav-btn) {
+    color: #d8f5e8;
+}
+
+body.dark .card-header p,
+body.dark .step p,
+body.dark .brand p {
+    color: #a5c5b7;
+}
+
+.theme-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 18px;
+    background: linear-gradient(135deg,#007b58,#004d38);
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    backdrop-filter: blur(20px);
+    transition: transform .3s;
+}
+
+.theme-btn:hover {
+    transform: translateY(-5px) rotate(10deg);
+}
+
+body.dark .demo-label {
+    background: #3d3012;
+    color: #ffe4a0;
+    border-color: #6e5720;
+}
+
+body.dark th {
+    background: #164638;
+    color: #b9ffe1;
+}
+
+body.dark td {
+    border-color: rgba(255,255,255,.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* PDF Download Button */
+
+.pdf-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(135deg, #e63946, #a4161a);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(230, 57, 70, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pdf-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(230, 57, 70, 0.3);
+}
+
+/* Professional Print Layout */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .result-section {
+        display: block !important;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .result-content {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+    }
+
+    .result-top {
+        background: #006a4e !important;
+        color: white !important;
+    }
+
+    .student-item {
+        background: #f1f5f3 !important;
+        color: #222 !important;
+        border: 1px solid #ddd;
+    }
+
+    .student-item strong {
+        color: #222 !important;
+    }
+
+    .demo-label {
+        display: block !important;
+        color: #8a3900 !important;
+        background: #fff3d6 !important;
+        border: 2px solid #f0b429 !important;
+    }
+
+    .print-btn,
+    .pdf-btn,
+    .theme-btn {
+        display: none !important;
+    }
+
+    tr {
+        break-inside: avoid;
+    }
+}

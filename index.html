@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HSC Result Checker 2026 | Bangladesh</title>
+
+<meta name="description" content="Independent HSC Result Checker for Bangladesh. Modern education result portal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #006a4e;
+    --primary-dark: #004d38;
+    --accent: #f42a41;
+    --text: #172b26;
+    --muted: #64748b;
+    --glass: rgba(255,255,255,.68);
+    --border: rgba(255,255,255,.75);
+    --shadow: 0 20px 60px rgba(0,65,44,.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter','Hind Siliguri',sans-serif;
+    background: #edf7f3;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 20% 15%,#d5fff0,transparent 35%),
+      radial-gradient(circle at 80% 75%,#c9e9ff,transparent 40%),
+      #edf7f3;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: .45;
+    animation: float 13s ease-in-out infinite;
+}
+
+.orb.one {
+    width: 340px;
+    height: 340px;
+    background: #32c68e;
+    top: 10%;
+    left: -100px;
+}
+
+.orb.two {
+    width: 300px;
+    height: 300px;
+    background: #85c6ff;
+    right: -70px;
+    top: 35%;
+    animation-delay: -5s;
+}
+
+.orb.three {
+    width: 230px;
+    height: 230px;
+    background: #ff9da8;
+    bottom: -70px;
+    left: 40%;
+    animation-delay: -8s;
+}
+
+@keyframes float {
+    0%,100% { transform: translate(0,0); }
+    50% { transform: translate(35px,-45px); }
+}
+
+.topbar {
+    background: #005b42;
+    color: white;
+    padding: 10px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.topbar span {
+    opacity: .95;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 18px auto;
+    padding: 15px 25px;
+    background: rgba(255,255,255,.68);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg,#007f59,#004b38);
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,100,70,.25);
+}
+
+.brand h2 {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.brand p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #38564b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 12px 18px;
+    border-radius: 12px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 70px 15px 35px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 17px;
+    border: 1px solid rgba(0,106,78,.15);
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background: #00b578;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(0,181,120,.12);
+}
+
+.hero h1 {
+    font-size: clamp(34px,5vw,58px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.gradient-text {
+    background: linear-gradient(100deg,#006a4e,#00a873,#008bd2);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero p {
+    color: var(--muted);
+    margin: 20px auto 0;
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.stat span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 25px;
+    align-items: start;
+    margin-top: 35px;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg,transparent,white,transparent);
+}
+
+.result-form {
+    padding: 35px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.card-header .icon {
+    width: 48px;
+    height: 48px;
+    background: #e1f5ec;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.card-header h2 {
+    font-size: 20px;
+}
+
+.card-header p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(0,80,55,.12);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #263f35;
+    outline: none;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background: white;
+    border-color: #00a873;
+    box-shadow: 0 0 0 4px rgba(0,168,115,.08);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg,#007b58,#004d38);
+    border: 0;
+    padding: 18px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 12px 25px rgba(0,106,78,.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(0,106,78,.28);
+}
+
+.submit-btn:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+.secure-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.side-card {
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.side-card h3 {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+    align-items: start;
+}
+
+.step-num {
+    background: #e1f5ec;
+    color: var(--primary);
+    height: 30px;
+    min-width: 30px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.step p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #54665e;
+}
+
+.notice-card {
+    background: linear-gradient(135deg,#006a4e,#004d38);
+    border-radius: 22px;
+    padding: 25px;
+    color: white;
+}
+
+.notice-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.notice-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    opacity: .85;
+}
+
+.notice-card a {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.result-section {
+    margin-top: 30px;
+    display: none;
+}
+
+.result-section.show {
+    display: block;
+}
+
+.result-content {
+    padding: 30px;
+}
+
+.demo-label {
+    background: #fff3d6;
+    border: 1px solid #ffdc8a;
+    color: #805500;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.result-top {
+    background: linear-gradient(135deg,#007653,#004c39);
+    color: white;
+    border-radius: 17px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.result-top h2 {
+    font-size: 20px;
+}
+
+.result-top p {
+    opacity: .8;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.gpa {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.student-item {
+    padding: 14px;
+    background: rgba(255,255,255,.65);
+    border-radius: 12px;
+}
+
+.student-item span {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 7px;
+}
+
+.student-item strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+th {
+    background: #e2f5eb;
+    color: #005f43;
+}
+
+th,td {
+    padding: 14px;
+    border-bottom: 1px solid #e3ebe7;
+    text-align: left;
+}
+
+.print-btn {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: #173e32;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px 30px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer a {
+    color: var(--primary);
+}
+
+@media(max-width:900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media(max-width:600px) {
+    .navbar {
+        margin: 12px;
+        padding: 13px;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .result-form {
+        padding: 23px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-top {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .topbar {
+        font-size: 10px;
+    }
+}
+
+@media print {
+    .bg,.topbar,.navbar,.hero,.main-grid,footer,.print-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .result-section {
+        display: block;
+        margin: 0;
+    }
+
+    .glass-card {
+        box-shadow: none;
+        border: none;
+    }
+}
+</style>
+</head><link rel="stylesheet" href="assets/css/style.css">
+
+<body>
+
+<div class="bg">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+</div>
+
+<div class="topbar">
+    <span>🇧🇩 Bangladesh Education Result Information</span>
+    <span>Independent Student Service Portal</span>
+</div>
+
+<nav class="navbar">
+    <div class="brand">
+        <div class="brand-icon">🎓</div>
+        <div>
+            <h2>HSC Result Checker</h2>
+            <p>Bangladesh Education Result Portal</p>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#checker">Check Result</a>
+        <a href="#guide">How It Works</a>
+        <a href="https://www.educationboardresults.gov.bd/" target="_blank" rel="noopener">Official Portal</a>
+        <a href="#checker" class="nav-btn">Get Started ↗</a>
+    </div>
+</nav>
+
+<div class="container">
+
+<section class="hero">
+    <div class="hero-badge">
+        <span class="dot"></span>
+        HSC Examination 2026
+    </div>
+
+    <h1>
+        Your Results.<br>
+        <span class="gradient-text">Beautifully Simplified.</span>
+    </h1>
+
+    <p>
+        A modern, independent education result checker
+        designed for students across Bangladesh.
+        Simple, fast and accessible on every device.
+    </p>
+
+    <div class="hero-stats">
+        <div class="stat">
+            <strong>11</strong>
+            <span>Education Boards</span>
+        </div>
+
+        <div class="stat">
+            <strong>2026</strong>
+            <span>HSC Examination</span>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Website Access</span>
+        </div>
+    </div>
+</section>
+
+<div class="main-grid">
+
+<section class="glass-card result-form" id="checker">
+
+    <div class="card-header">
+        <div class="icon">📋</div>
+        <div>
+            <h2>Check Examination Result</h2>
+            <p>Enter your examination information below.</p>
+        </div>
+    </div>
+
+    <form id="resultForm">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Examination</label>
+                <select id="exam" required>
+                    <option value="hsc">HSC / Alim</option>
+                    <option value="ssc">SSC / Dakhil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Examination Year</label>
+                <select id="year" required>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Education Board</label>
+                <select id="board" required>
+                    <option value="">Select Education Board</option>
+                    <option value="dhaka">Dhaka</option>
+                    <option value="rajshahi">Rajshahi</option>
+                    <option value="comilla">Comilla</option>
+                    <option value="chittagong">Chittagong</option>
+                    <option value="jessore">Jessore</option>
+                    <option value="barisal">Barisal</option>
+                    <option value="sylhet">Sylhet</option>
+                    <option value="dinajpur">Dinajpur</option>
+                    <option value="mymensingh">Mymensingh</option>
+                    <option value="madrasah">Madrasah</option>
+                    <option value="technical">Technical</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Roll Number</label>
+                <input id="roll" type="text" inputmode="numeric"
+                pattern="[0-9]+" maxlength="12"
+                placeholder="Enter your roll number" required>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label>Registration Number</label>
+            <input id="reg" type="text" inputmode="numeric"
+            pattern="[0-9]+" maxlength="20"
+            placeholder="Enter your registration number" required>
+        </div>
+
+        <button class="submit-btn" id="checkBtn" type="submit">
+            Check My Result →
+        </button>
+
+        <p class="secure-note">
+            Independent demonstration portal.
+            No personal information is sent to a server in demo mode.
+        </p>
+
+    </form>
+
+</section>
+
+<aside>
+
+    <div class="glass-card side-card" id="guide">
+        <h3>✨ How It Works</h3>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <p>Select your examination and year.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">02</div>
+                <p>Choose your education board.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">03</div>
+                <p>Enter your roll and registration number.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">04</div>
+                <p>View the sample result layout.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notice-card">
+        <h3>🏛️ Official Result Portal</h3>
+        <p>
+            For verified examination results,
+            visit the Bangladesh Education Board's
+            official result website.
+        </p>
+
+        <a href="https://www.educationboardresults.gov.bd/"
+           target="_blank" rel="noopener noreferrer">
+            Visit Official Website ↗
+        </a>
+    </div>
+
+</aside>
+
+</div>
+
+<section class="result-section" id="resultSection">
+    <div class="glass-card result-content">
+
+        <div class="demo-label">
+            ⚠ DEMONSTRATION RESULT — NOT AN OFFICIAL MARKSHEET
+        </div>
+
+        <div class="result-top">
+            <div>
+                <h2>Examination Result</h2>
+                <p id="resultSubtitle">Sample Result</p>
+            </div>
+
+            <div>
+                <div class="gpa" id="gpa">4.50</div>
+                <small>Demo GPA / 5.00</small>
+            </div>
+        </div>
+
+        <div class="student-grid" id="studentInfo"></div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="gradeBody"></tbody>
+            </table>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">
+            🖨 Print Sample Result
+        </button>
+
+    </div>
+</section>
+
+</div>
+
+<footer>
+    <p>© 2026 HSC Result Checker. All Rights Reserved.</p>
+    <p>
+        Independent educational information service.
+        Not affiliated with the Government of Bangladesh or any Education Board.
+    </p>
+    <p>
+        <a href="https://www.educationboardresults.gov.bd/"
+        target="_blank" rel="noopener noreferrer">
+        Official Education Board Result Website
+        </a>
+    </p>
+</footer>
+
+<script>
+const form = document.getElementById("resultForm");
+const section = document.getElementById("resultSection");
+
+function addInfo(label, value) {
+    const box = document.createElement("div");
+    box.className = "student-item";
+
+    const span = document.createElement("span");
+    span.textContent = label;
+
+    const strong = document.createElement("strong");
+    strong.textContent = value;
+
+    box.append(span, strong);
+    document.getElementById("studentInfo").appendChild(box);
+}
+
+function addGrade(code, subject, grade) {
+    const row = document.createElement("tr");
+
+    [code, subject, grade].forEach(value => {
+        const td = document.createElement("td");
+        td.textContent = value;
+        row.appendChild(td);
+    });
+
+    document.getElementById("gradeBody").appendChild(row);
+}
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const button = document.getElementById("checkBtn");
+
+    const exam = document.getElementById("exam").value;
+    const year = document.getElementById("year").value;
+    const board = document.getElementById("board").value;
+    const roll = document.getElementById("roll").value.trim();
+    const reg = document.getElementById("reg").value.trim();
+
+    if (!exam || !year || !board || !roll || !reg) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (!/^\d+$/.test(roll) || !/^\d+$/.test(reg)) {
+        alert("Roll and Registration must contain numbers only.");
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Checking Result...";
+
+    try {
+        const response = await fetch(
+            "http://localhost:8080/api/result",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    exam,
+                    year,
+                    board,
+                    roll,
+                    reg
+                })
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("API request failed: " + response.status);
+        }
+
+        const data = await response.json();
+
+        // Clear previous result
+        document.getElementById("studentInfo").replaceChildren();
+        document.getElementById("gradeBody").replaceChildren();
+
+        // Display response information
+        document.getElementById("resultSubtitle").textContent =
+            data.exam.toUpperCase() + " " +
+            data.year + " • " +
+            data.board.toUpperCase();
+
+        document.getElementById("gpa").textContent = data.gpa;
+
+        addInfo("Student Name", data.name);
+        addInfo("Roll Number", data.roll);
+        addInfo("Education Board", data.board);
+        addInfo("Examination", data.exam.toUpperCase());
+        addInfo("Examination Year", data.year);
+        addInfo("Result Status", data.result);
+
+        // Subject Grades
+        if (Array.isArray(data.grades)) {
+            data.grades.forEach(subject => {
+                addGrade(
+                    subject.code,
+                    subject.subject,
+                    subject.grade
+                );
+            });
+        }
+
+        section.classList.add("show");
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        alert(
+            "Could not connect to Backend API. " +
+            "Please make sure your Go server is running."
+        );
+    } finally {
+        button.disabled = false;
+        button.textContent = "Check My Result →";
+    }
+});
+</script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/pdf.js"></script>
+</body>
+</html>
